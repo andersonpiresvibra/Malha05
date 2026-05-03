@@ -1050,7 +1050,7 @@ export const GridOps: React.FC<GridOpsProps> = ({
                 label: 'CANCELADO', 
                 color: isDarkMode ? 'text-red-400 bg-red-500/10 border-red-500/30' : 'text-red-600 bg-red-50 border-red-200' 
             };
-            const hasSwap = f.logs.some(l => l.message.toLowerCase().includes('troca') || l.message.toLowerCase().includes('swap'));
+            const hasSwap = f.logs?.some(l => l.message.toLowerCase().includes('troca') || l.message.toLowerCase().includes('swap'));
             if (hasSwap) return { 
                 label: 'COM TROCA', 
                 color: isDarkMode ? 'text-purple-400 bg-purple-500/10 border-purple-500/30' : 'text-purple-600 bg-purple-50 border-purple-200' 

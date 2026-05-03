@@ -229,7 +229,7 @@ export const FlightDetailsModal: React.FC<FlightDetailsModalProps> = ({ flight, 
     const updated = { 
         ...localFlight, 
         destination: formatted,
-        logs: [...localFlight.logs, newLog]
+        logs: [...(localFlight.logs || []), newLog]
     };
     
     setLocalFlight(updated);
@@ -245,7 +245,7 @@ export const FlightDetailsModal: React.FC<FlightDetailsModalProps> = ({ flight, 
     const updated = { 
         ...localFlight, 
         departureFlightNumber: formatted,
-        logs: [...localFlight.logs, newLog]
+        logs: [...(localFlight.logs || []), newLog]
     };
     
     setLocalFlight(updated);
@@ -260,7 +260,7 @@ export const FlightDetailsModal: React.FC<FlightDetailsModalProps> = ({ flight, 
     const updated = { 
         ...localFlight, 
         registration: regInput,
-        logs: [...localFlight.logs, newLog]
+        logs: [...(localFlight.logs || []), newLog]
     };
 
     setLocalFlight(updated);
@@ -275,7 +275,7 @@ export const FlightDetailsModal: React.FC<FlightDetailsModalProps> = ({ flight, 
       const updated = { 
           ...localFlight, 
           eta: etaInput,
-          logs: [...localFlight.logs, newLog]
+          logs: [...(localFlight.logs || []), newLog]
       };
 
       setLocalFlight(updated);
@@ -290,7 +290,7 @@ export const FlightDetailsModal: React.FC<FlightDetailsModalProps> = ({ flight, 
       const updated = { 
           ...localFlight, 
           actualArrivalTime: chockInput,
-          logs: [...localFlight.logs, newLog]
+          logs: [...(localFlight.logs || []), newLog]
       };
 
       setLocalFlight(updated);
@@ -305,7 +305,7 @@ export const FlightDetailsModal: React.FC<FlightDetailsModalProps> = ({ flight, 
     const updated = { 
         ...localFlight, 
         etd: etdInput,
-        logs: [...localFlight.logs, newLog]
+        logs: [...(localFlight.logs || []), newLog]
     };
 
     setLocalFlight(updated);
@@ -320,7 +320,7 @@ export const FlightDetailsModal: React.FC<FlightDetailsModalProps> = ({ flight, 
     const updated = { 
         ...localFlight, 
         operator: operatorInput,
-        logs: [...localFlight.logs, newLog]
+        logs: [...(localFlight.logs || []), newLog]
     };
 
     setLocalFlight(updated);
@@ -335,7 +335,7 @@ export const FlightDetailsModal: React.FC<FlightDetailsModalProps> = ({ flight, 
     const updated = { 
         ...localFlight, 
         supportOperator: supportInput,
-        logs: [...localFlight.logs, newLog]
+        logs: [...(localFlight.logs || []), newLog]
     };
 
     setLocalFlight(updated);
@@ -710,7 +710,7 @@ export const FlightDetailsModal: React.FC<FlightDetailsModalProps> = ({ flight, 
                                         <button 
                                             onClick={() => {
                                                 const newLog = generateAuditLog('Op. Apoio', localFlight.supportOperator, undefined);
-                                                const updated = { ...localFlight, supportOperator: undefined, logs: [...localFlight.logs, newLog] };
+                                                const updated = { ...localFlight, supportOperator: undefined, logs: [...(localFlight.logs || []), newLog] };
                                                 setLocalFlight(updated);
                                                 onUpdate(updated);
                                             }}
