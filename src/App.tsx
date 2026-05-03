@@ -57,7 +57,7 @@ function Dashboard() {
         <Sidebar activeView={activeView} onViewChange={setActiveView} isDarkMode={isDarkMode} />
         
         <main className="flex-1 overflow-auto relative">
-          <div id="subheader-portal-target" className="absolute top-0 left-0 right-0 z-50"></div>
+          <div id="subheader-portal-target" className="absolute top-0 left-0 right-0 z-[100]"></div>
           
           <div className="h-full w-full absolute top-0 left-0 pt-[64px] pb-0">
             {activeView === 'GRID_OPS' && (
